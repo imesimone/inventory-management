@@ -6,6 +6,7 @@ export default {
     orders: '注文',
     finance: '財務',
     demandForecast: '需要予測',
+    restocking: '補充発注',
     companyName: '触媒コンポーネンツ',
     subtitle: '在庫管理システム'
   },
@@ -106,12 +107,16 @@ export default {
     title: '注文',
     description: '顧客注文の表示と管理',
     allOrders: 'すべての注文',
+    submittedOrders: '発注済みオーダー',
+    noSubmittedOrders: '送信済みの補充発注はまだありません。',
+    submittedLoadFailed: '発注済みオーダーの読み込みに失敗しました',
     totalOrders: '総注文数',
     totalRevenue: '総収益',
     avgOrderValue: '平均注文額',
     onTimeDelivery: '定時配達',
     itemsCount: '{count}件',
     quantity: '数量',
+    daysValue: '{count}日',
     table: {
       orderNumber: '注文番号',
       orderId: '注文ID',
@@ -124,6 +129,8 @@ export default {
       value: '価格',
       totalValue: '合計金額',
       status: 'ステータス',
+      submittedDate: '送信日',
+      leadTime: 'リードタイム',
       expectedDelivery: '予定配達日',
       actualDelivery: '実際の配達日'
     }
@@ -188,6 +195,35 @@ export default {
     }
   },
 
+  // Restocking
+  restocking: {
+    title: '補充発注',
+    description: '予算を設定し、その範囲で発注できる予測品目を注文します',
+    budgetLabel: '補充予算',
+    budgetHint: '品目は予測需要の伸び率順に並べられ、予算内に収まるものが追加されます。',
+    spend: '発注金額',
+    remainingBudget: '残り予算',
+    leadTime: '発注リードタイム',
+    days: '{count}日',
+    recommendedItems: '推奨品目',
+    table: {
+      sku: 'SKU',
+      itemName: '品目名',
+      trend: 'トレンド',
+      quantity: '数量',
+      unitCost: '単価',
+      lineTotal: '小計',
+      leadTime: 'リードタイム'
+    },
+    noItems: 'この予算に収まる品目はありません。予算を増やすと推奨品目が表示されます。',
+    placeOrder: '発注する',
+    placingOrder: '発注中...',
+    orderPlaced: '注文 {orderNumber} を送信しました。リードタイム: {days}日',
+    viewOrders: '注文画面で確認',
+    orderFailed: '発注に失敗しました',
+    loadFailed: '需要予測の読み込みに失敗しました'
+  },
+
   // Filters
   filters: {
     timePeriod: '期間',
@@ -204,6 +240,7 @@ export default {
     shipped: '出荷済み',
     processing: '処理中',
     backordered: 'バックオーダー',
+    submitted: '送信済み',
     inStock: '在庫あり',
     lowStock: '在庫僅少',
     adequate: '適量'
@@ -359,7 +396,14 @@ export default {
     '48V DC Power Supply Unit': '48V DC電源ユニット',
     'USB-C PD 100W Power Supply': 'USB-C PD 100W電源',
     'Battery Backup Power Supply': 'バッテリバックアップ電源',
-    'Adjustable Bench Power Supply': '可変ベンチ電源'
+    'Adjustable Bench Power Supply': '可変ベンチ電源',
+    'Industrial Widget Type A': '産業用ウィジェットA型',
+    'Steel Bearing Assembly': 'スチールベアリングアセンブリ',
+    'High-Temperature Gasket': '耐熱ガスケット',
+    'Electric Motor 5HP': '電動モーター5HP',
+    'Oil Filter Cartridge': 'オイルフィルターカートリッジ',
+    'Pressure Relief Valve': '圧力逃し弁',
+    'Logic Controller Board': 'ロジックコントローラーボード'
   },
 
   // Customer Names

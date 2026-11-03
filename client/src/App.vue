@@ -22,6 +22,9 @@
           <router-link to="/demand" :class="{ active: $route.path === '/demand' }">
             {{ t('nav.demandForecast') }}
           </router-link>
+          <router-link to="/restocking" :class="{ active: $route.path === '/restocking' }">
+            {{ t('nav.restocking') }}
+          </router-link>
           <router-link to="/reports" :class="{ active: $route.path === '/reports' }">
             Reports
           </router-link>
@@ -33,7 +36,8 @@
         />
       </div>
     </header>
-    <FilterBar />
+    <!-- Global filters don't apply to restocking (forecasts and budget only) -->
+    <FilterBar v-if="$route.path !== '/restocking'" />
     <main class="main-content">
       <router-view />
     </main>
@@ -244,6 +248,19 @@ body {
   border-radius: 6px;
   transition: all 0.2s ease;
   position: relative;
+}
+
+/* Keep seven tabs on one line on narrower desktops */
+@media (max-width: 1280px) {
+  .nav-tabs a {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .subtitle {
+    display: none;
+  }
 }
 
 .nav-tabs a:hover {
