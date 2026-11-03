@@ -6,6 +6,7 @@ export default {
     orders: 'Orders',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
+    restocking: 'Restocking',
     companyName: 'Catalyst Components',
     subtitle: 'Inventory Management System'
   },
@@ -106,12 +107,16 @@ export default {
     title: 'Orders',
     description: 'View and manage customer orders',
     allOrders: 'All Orders',
+    submittedOrders: 'Submitted Orders',
+    noSubmittedOrders: 'No restocking orders have been submitted yet.',
+    submittedLoadFailed: 'Failed to load submitted orders',
     totalOrders: 'Total Orders',
     totalRevenue: 'Total Revenue',
     avgOrderValue: 'Avg Order Value',
     onTimeDelivery: 'On-Time Delivery',
     itemsCount: '{count} items',
     quantity: 'Qty',
+    daysValue: '{count} days',
     table: {
       orderNumber: 'Order Number',
       orderId: 'Order ID',
@@ -124,6 +129,8 @@ export default {
       value: 'Value',
       totalValue: 'Total Value',
       status: 'Status',
+      submittedDate: 'Submitted',
+      leadTime: 'Lead Time',
       expectedDelivery: 'Expected Delivery',
       actualDelivery: 'Actual Delivery'
     }
@@ -188,6 +195,35 @@ export default {
     }
   },
 
+  // Restocking
+  restocking: {
+    title: 'Restocking',
+    description: 'Set a budget and order the forecasted items it can cover',
+    budgetLabel: 'Restocking Budget',
+    budgetHint: 'Items are ranked by forecasted demand growth and added while they fit in the budget.',
+    spend: 'Order Spend',
+    remainingBudget: 'Remaining Budget',
+    leadTime: 'Order Lead Time',
+    days: '{count} days',
+    recommendedItems: 'Recommended Items',
+    table: {
+      sku: 'SKU',
+      itemName: 'Item Name',
+      trend: 'Trend',
+      quantity: 'Quantity',
+      unitCost: 'Unit Cost',
+      lineTotal: 'Line Total',
+      leadTime: 'Lead Time'
+    },
+    noItems: 'No items fit within this budget. Increase the budget to see recommendations.',
+    placeOrder: 'Place Order',
+    placingOrder: 'Placing order...',
+    orderPlaced: 'Order {orderNumber} submitted. Lead time: {days} days.',
+    viewOrders: 'View in Orders',
+    orderFailed: 'Failed to place order',
+    loadFailed: 'Failed to load demand forecasts'
+  },
+
   // Filters
   filters: {
     timePeriod: 'Time Period',
@@ -204,6 +240,7 @@ export default {
     shipped: 'Shipped',
     processing: 'Processing',
     backordered: 'Backordered',
+    submitted: 'Submitted',
     inStock: 'In Stock',
     lowStock: 'Low Stock',
     adequate: 'Adequate'

@@ -54,6 +54,7 @@ npm install && npm run dev
 - `GET /api/dashboard/summary` - All filters
 - `GET /api/demand`, `/api/backlog` - No filters
 - `GET /api/spending/*` - Summary, monthly, categories, transactions
+- `GET /api/restocking-orders`, `POST /api/restocking-orders` - Submitted restocking orders (separate in-memory list, not in `/api/orders`); `/api/demand` items carry `unit_cost`, `supplier_name`, `lead_time_days`
 
 ## Common Issues
 1. Use unique keys in v-for (not `index`) - use `sku`, `month`, etc.
